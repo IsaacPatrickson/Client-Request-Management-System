@@ -2,6 +2,14 @@ import pytest
 from django.contrib.auth.models import User
 from main.forms import UserRegistrationForm
 
+# This test file focuses on **unit testing the UserRegistrationForm class directly**
+# It verifies the form's validation logic without involving HTTP requests or views
+# Tests include:
+# - Valid form data leads to successful user creation
+# - Password mismatch triggers validation errors
+#
+# These tests ensure the form behaves correctly in isolation,
+# which helps catch validation bugs early without requiring full integration tests.
     
 # Test that the custom UserRegistrationForm validates valid data correctly
 @pytest.mark.django_db

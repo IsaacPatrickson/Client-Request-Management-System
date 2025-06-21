@@ -14,25 +14,25 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
 from main.views import CustomLoginView
+from main.admin import custom_admin_site  # Import your custom admin
 
-# Redirect /admin/login/ to /login/
+# Redirect /admin/login/ to your custom login page
 def redirect_admin_login(request):
     return redirect('/login/')
 
 urlpatterns = [
-    # Redirect admin login to your custom login page
+    # Redirect non-staff users hitting admin login
     path('admin/login/', redirect_admin_login),
 
-    # Custom login
+    # Custom login view
     path('login/', CustomLoginView.as_view(), name='login'),
 
-    # Your app URLs
+    # App-specific URLs
     path('', include('main.urls')),
 
-    # Admin dashboard (this must be last for the override to work)
-    path('admin/', admin.site.urls),
+    # Use custom admin with permission override
+    path('admin/', custom_admin_site.urls),
 ]

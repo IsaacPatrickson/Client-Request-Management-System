@@ -1,5 +1,6 @@
 import pytest
 
+# These tests confirm the admin login page redirects to the custom login page
 @pytest.mark.django_db
 def test_admin_login_redirects_to_custom_login(client):
     response = client.get('/admin/login/')
