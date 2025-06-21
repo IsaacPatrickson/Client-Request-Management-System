@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Register</h1>
+    {% comment %} 
+    Uses the POST method to send data to the server.
+    This is standard when submitting sensitive data as it shouldn't be in the URL).
+    {% endcomment %}
+    <form method="post">
+        {% comment %} 
+        This is a template tag that injects a CSRF (Cross-Site Request Forgery) protection token. 
+        Required in Django for any form that modifies data (POST, PUT, DELETE).
+        Prevents attackers from tricking users into submitting forms unknowingly.
+        {% endcomment %}
+        {% csrf_token %}
+        {% comment %}
+        Wraps each field in the form in a <p> tag
+        {% endcomment %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
+
+

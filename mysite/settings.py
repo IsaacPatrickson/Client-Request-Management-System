@@ -127,3 +127,9 @@ STORAGES = {
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Default dashboard if no `next` parameter is used (no admin or superuser specified)
+LOGIN_REDIRECT_URL = '/dashboard/'  
+
+# The login url for unauthenticated users who try to visit the secure views
+LOGIN_URL = '/login/'
