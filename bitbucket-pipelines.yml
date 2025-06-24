@@ -13,12 +13,10 @@ pipelines:
           - postgres
         caches:
           - pip
-        variables:
-          DATABASE_URL: ${DATABASE_URL}
         script:
-          - echo $DATABASE_URL
           - pip install -r requirements.txt
-          - pip install pytest psycopg[binary] pytest-django
+          - pip install psycopg[binary] pytest pytest-django
+          - ./wait-for-db.sh
           - python manage.py migrate --noinput
           - pytest -v main/tests --junitxml=test-reports/report.xml
         artifacts:
@@ -32,3 +30,4 @@ definitions:
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: password
         POSTGRES_DB: postgres
+
