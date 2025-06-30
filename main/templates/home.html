@@ -1,11 +1,43 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
 </head>
 <body>
-    <h1>Welcome to the Homepage!</h1>
-    <a href="{% url 'login' %}" class="btn btn-danger">Login</a>
-    <a href="{% url 'register' %}" class="btn btn-danger">Register</a>
+    <!-- Background SVG -->
+    <div class="background-svg">
+        <svg id="pieces" class="section1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet">
+            <defs>
+                <linearGradient id="fill1">
+                    <stop class="stop1" offset="0%"></stop>
+                    <stop class="stop2" offset="100%"></stop>
+                </linearGradient>
+                <linearGradient id="fill2">
+                    <stop class="stop1" offset="0%"></stop>
+                    <stop class="stop2" offset="100%"></stop>
+                </linearGradient>
+            </defs>
+            <polygon id="path1" points="" fill="url(#fill1)"></polygon>
+            <polygon id="path2" points="" fill="url(#fill2)"></polygon>
+        </svg>
+    </div>
+
+    <!-- Foreground content -->
+    <div class="content-wrapper">
+        <div class="welcome-container">
+            <img src="{% static 'images/MW-Logo-Dark-Blue@2x.png' %}" alt="logo">
+            <h1>Welcome to the Homepage!</h1>
+            <a href="{% url 'login' %}" class="btn btn-danger">Login</a>
+            <a href="{% url 'register' %}" class="btn btn-danger">Register</a>
+        </div>
+    </div>
+
+    <!-- jQuery first -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Your main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
