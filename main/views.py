@@ -21,7 +21,6 @@ class HomeView(TemplateView):
 class RegisterView(FormView):
     template_name = 'registration/register.html'
     form_class = UserRegistrationForm
-    success_url = reverse_lazy('login')
     
     # Logged in users should never see the register page
     def dispatch(self, request, *args, **kwargs):
@@ -32,7 +31,8 @@ class RegisterView(FormView):
     def form_valid(self, form):
         form.save()
         messages.success(self.request, "You have successfully Registered.")
-        return super().form_valid(form)
+        # Return the same page with an empty form
+        return self.render_to_response(self.get_context_data(form=self.form_class()))
     
     
 # Custom login view

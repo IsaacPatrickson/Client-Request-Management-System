@@ -1,6 +1,7 @@
 import pytest
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.contrib.messages import get_messages
 
 # This test file focuses on **integration testing the user registration view**
 # It simulates POST requests submitting form data through the client,
@@ -23,8 +24,14 @@ def test_user_can_register(client):
         'email': 'newuser@example.com',
         'password': 'password123456789',
         'password_confirm': 'password123456789'
-    })
+    }, follow=True)
     # Verifies a new User instance with username 'newuser' exists in the database
     assert User.objects.filter(username='newuser').exists()
-    # Verifies the response status code is 302, indicating a redirect after successful registration
-    assert response.status_code == 302
+    # Verifies the response status code is 200, 
+    # indicating a successful registration and user stays on the registration page
+    assert 'registration/register.html' in [t.name for t in response.templates]
+    # Success message was set
+    messages = list(get_messages(response.wsgi_request))
+    assert any("successfully registered" in m.message.lower() for m in messages)
+    # Check that form is empty again
+    assert 'value="newuser"' not in response.content.decode()
