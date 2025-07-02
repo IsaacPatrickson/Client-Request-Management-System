@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
 </head>
 <body>
@@ -28,9 +29,11 @@
     <div class="content-wrapper">
         <div class="welcome-container">
             <img src="{% static 'images/MW-Logo-Dark-Blue@2x.png' %}" alt="logo">
-            <h1>Welcome to the Homepage!</h1>
-            <a href="{% url 'login' %}" class="btn btn-danger">Login</a>
-            <a href="{% url 'register' %}" class="btn btn-danger">Register</a>
+            <h1>Welcome to the CRMS!</h1>
+            <div class="home-options">
+                <a href="{% url 'login' %}" class="btn btn-danger">Login</a>
+                <a href="{% url 'register' %}" class="btn btn-danger">Register</a>
+            </div>
         </div>
     </div>
 

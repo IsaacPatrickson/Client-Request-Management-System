@@ -27,7 +27,7 @@ let startTime = null;
 const duration = 1400;
 const delayPolygon2 = 300;
 const pointDelays1 = [0, 600, 600, 600, 600];
-const pointDelays2 = [0, 0, 400, 400, 900, 1000]; // 6 points in polygon2
+const pointDelays2 = [0, 0, 400, 400, 400, 1000]; // 6 points in polygon2
 const durationPerPoint = 1000; // how long each point takes once it starts
 
 let currentPointsStart1 = [], currentPointsEnd1 = [];
@@ -109,9 +109,9 @@ function setupAndAnimate() {
     currentPointsEnd2 = [
         [0, 0],
         [width * 0.2, 0],
-        [width * 0.75, height],
-        [width * 0.75, height],
-        [width * 0.75, height],
+        [width * 0.70, height],
+        [width * 0.70, height],
+        [width * 0.70, height],
         [0, height]
     ];
 
@@ -148,9 +148,9 @@ function animateOnResize() {
     currentPointsEnd2 = [
         [0, 0],
         [width * 0.2, 0],
-        [width * 0.75, height],
-        [width * 0.75, height],
-        [width * 0.75, height],
+        [width * 0.70, height],
+        [width * 0.70, height],
+        [width * 0.70, height],
         [0, height]
     ];
 
