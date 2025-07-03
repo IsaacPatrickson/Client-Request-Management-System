@@ -6,20 +6,44 @@ from django.contrib.auth.models import Group
 
 class UserRegistrationForm (forms.ModelForm):
     # Explicitly declared fields usually display before the fields defined in class Meta
+    username = forms.CharField(
+        required=True,
+        min_length=5,
+        max_length=20,
+        help_text='Enter a username between 5-20 characters.',
+        widget=forms.TextInput(attrs={
+            'autocomplete': 'username',
+            'class': 'form-control',
+        })
+    )
+    
     email = forms.EmailField(
-        widget=forms.EmailInput, # Rendered as an email input field
-        required=True            # Email is mandatory
+        required=True,
+        help_text='Enter a valid email address.',
+        widget=forms.EmailInput(attrs={
+            'autocomplete': 'email',
+            'class': 'form-control',
+        })
     )
+    
     password = forms.CharField(
-        widget=forms.PasswordInput, # Rendered as a password input (masked)
-        required=True,              # Password is mandatory
-        min_length=12,              # Enforce minimum length of 12 characters
-        help_text='Required. Enter a secure password. Must be at least 12 characters.'
+        widget=forms.PasswordInput(attrs={          # Rendered as a password input (masked)
+            'autocomplete': 'new-password',
+            'class': 'form-control',
+        }),
+        required=True,                              # Mandatory field
+        min_length=12,                              # Enforce minimum length of 12 characters
+        help_text='Password required. Must be at least 12 characters.'
     )
+
+    
     password_confirm = forms.CharField(
-        widget=forms.PasswordInput, # Confirm password field, also masked
-        label='Confirm Password',   # Label override
-        required=True               # Mandatory field
+        widget=forms.PasswordInput(attrs={          # Confirm password field, also masked
+            'autocomplete': 'new-password',         
+            'class': 'form-control',
+        }),
+        label='Confirm Password',                   # Label override
+        required=True                               # Mandatory field
     )
     
     class Meta:

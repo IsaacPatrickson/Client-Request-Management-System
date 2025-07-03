@@ -14,8 +14,10 @@ from main.admin import custom_admin_site
 urlpatterns = [
     path('admin/', custom_admin_site.urls, name='custom_admin'),
     path('', HomeView.as_view(), name='home'),
-    path('register/', RegisterView.as_view(), name='register'),
+    
     path('login/', CustomLoginView.as_view(), name='login'),
+    path('register/', RegisterView.as_view(), name='register'),
     path('logout/', CustomLogoutView.as_view(), name='logout'),
+    
     path('account-disabled/', AccountDisabledView.as_view(), name='account_disabled')
 ]

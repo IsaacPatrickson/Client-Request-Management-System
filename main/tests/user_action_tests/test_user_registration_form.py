@@ -29,7 +29,7 @@ def test_user_can_register(client):
     assert User.objects.filter(username='newuser').exists()
     # Verifies the response status code is 200, 
     # indicating a successful registration and user stays on the registration page
-    assert 'registration/register.html' in [t.name for t in response.templates]
+    assert 'register.html' in [t.name for t in response.templates]
     # Success message was set
     messages = list(get_messages(response.wsgi_request))
     assert any("successfully registered" in m.message.lower() for m in messages)

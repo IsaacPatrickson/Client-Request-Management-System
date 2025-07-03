@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <title>Account Disabled</title>
+    <title>Dashboard</title>
 </head>
 <body>
     <!-- Background SVG -->
@@ -27,13 +27,39 @@
 
     <!-- Foreground content -->
     <div class="content-wrapper">
-        <div id="home-container" class="center-container">
+        <div id="register-container" class="center-container">
             <img src="{% static 'images/MW-Logo-Dark-Blue@2x.png' %}" alt="logo">
-            <h1>Your Account Has Been Disabled</h1>
-            <p>Another user has removed your staff role</p>
+            <h1>Register</h1>
+            {% comment %} 
+            Uses the POST method to send data to the server.
+            This is standard when submitting sensitive data as it shouldn't be in the URL).
+            {% endcomment %}
+            {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form method="post" class="register-form">
+                {% comment %} 
+                This is a template tag that injects a CSRF (Cross-Site Request Forgery) protection token. 
+                Required in Django for any form that modifies data (POST, PUT, DELETE).
+                Prevents attackers from tricking users into submitting forms unknowingly.
+                {% endcomment %}
+                {% csrf_token %}
+                {% comment %}
+                Wraps each field in the form in a <p> tag
+                {% endcomment %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-submit">Register</button>
+            </form>
             <div class="navigation-buttons">
+                <a href="{% url 'login' %}" class="btn btn-standard">Go to Login</a>
                 <a href="{% url 'home' %}" class="btn btn-standard">Return to home</a>
-            </div>
+            </div>    
         </div>
     </div>
 
@@ -42,6 +68,7 @@
 
     <!-- My main JS -->
     <script src="{% static 'js/main.js' %}"></script>
-    
 </body>
 </html>
+
+

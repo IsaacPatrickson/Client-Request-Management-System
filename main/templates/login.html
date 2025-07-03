@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <title>Home</title>
+    <title>Login</title>
 </head>
 <body>
     <!-- Background SVG -->
@@ -27,12 +27,27 @@
 
     <!-- Foreground content -->
     <div class="content-wrapper">
-        <div id="home-container" class="center-container">
+        <div id="login-container" class="center-container">
             <img src="{% static 'images/MW-Logo-Dark-Blue@2x.png' %}" alt="logo">
-            <h1>Welcome to the CRMS!</h1>
+            <h1>Login</h1>
+            {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form method="post" class="login-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-submit">Log in</button>
+            </form>
             <div class="navigation-buttons">
-                <a href="{% url 'login' %}" class="btn btn-standard">Login</a>
-                <a href="{% url 'register' %}" class="btn btn-standard">Register</a>
+                <a href="{% url 'home' %}" class="btn btn-standard">Return to home</a>
+                <p>Don't have an account?</p>
+                <a href="{% url 'register' %}" class="btn btn-standard">Register Here!</a>
             </div>
         </div>
     </div>

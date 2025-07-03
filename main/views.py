@@ -19,7 +19,7 @@ class HomeView(TemplateView):
 
 # # Registration form view
 class RegisterView(FormView):
-    template_name = 'registration/register.html'
+    template_name = 'register.html'
     form_class = UserRegistrationForm
     
     # Logged in users should never see the register page
@@ -37,7 +37,7 @@ class RegisterView(FormView):
     
 # Custom login view
 class CustomLoginView(LoginView):
-    template_name = 'registration/login.html'
+    template_name = 'login.html'
     
     # Check if the user is_staff after a successful login
     # If not, call logout and redirect to account disabled
@@ -64,11 +64,19 @@ class CustomLoginView(LoginView):
     
     
 class CustomLogoutView(LogoutView):
+    next_page = '/'
+    
     def dispatch(self, request, *args, **kwargs):
         messages.success(request, "You have successfully logged out.")
         return super().dispatch(request, *args, **kwargs)
-        
     
     
 class AccountDisabledView(TemplateView):
     template_name = 'account-disabled.html'
+    
+    def dispatch(self, request, *args, **kwargs):
+        # If the user is already logged‑in, send them to the admin index
+        if request.user.is_authenticated:
+            return redirect(reverse_lazy('custom_admin:index'))   # use 'admin:index' if you kept the default site
+        # Otherwise show the "account disabled" page
+        return super().dispatch(request, *args, **kwargs)
