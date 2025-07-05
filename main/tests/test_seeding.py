@@ -1,7 +1,7 @@
 import pytest
 from django.contrib.auth.models import User, Group
-from main.utils.permissions import create_limited_users_permission_group
-from main.utils.seed_users import seed_example_users 
+from main.management.commands.create_limited_user_group import create_limited_users_permission_group
+from main.management.commands.seed_users import seed_example_users 
 
 # Seeding is usually considered setup or fixture logic, not core app logic.
 # However this was for TDD and I wanted to check the data was seeding for this one case

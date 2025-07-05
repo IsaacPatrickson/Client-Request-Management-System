@@ -2,7 +2,7 @@ import pytest
 from django.urls import reverse
 from django.contrib.contenttypes.models import ContentType
 from main.models import Client, RequestType, ClientRequest
-from main.utils.permissions import create_limited_users_permission_group
+from main.management.commands.create_limited_user_group import create_limited_users_permission_group
 
 @pytest.fixture
 def limited_user_client(client, django_user_model):

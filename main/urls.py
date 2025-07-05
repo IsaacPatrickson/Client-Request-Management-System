@@ -1,7 +1,7 @@
 from .views import *
 from django.urls import path
 from main.admin import custom_admin_site
-# from django.contrib.auth.views import LogoutView
+from django.contrib.auth.views import LogoutView
 
 # URL patterns for the main app, routing HTTP requests to corresponding views:
 # - 'admin/' uses the custom Django admin site instead of the default admin
@@ -17,7 +17,7 @@ urlpatterns = [
     
     path('login/', CustomLoginView.as_view(), name='login'),
     path('register/', RegisterView.as_view(), name='register'),
-    path('logout/', CustomLogoutView.as_view(), name='logout'),
+    path('logout/', LogoutView.as_view(), name='logout'),
     
     path('account-disabled/', AccountDisabledView.as_view(), name='account_disabled')
 ]

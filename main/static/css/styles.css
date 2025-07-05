@@ -1,16 +1,9 @@
+/* ---------- Resets / Globals -------------------------------------------- */
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-}
-
-svg {
-    position: absolute;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    mix-blend-mode: multiply;
-    pointer-events: none;
 }
 
 body, html {
@@ -23,6 +16,18 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+
+
+/* ---------- Decorative SVG background ----------------------------------- */
+
+svg {
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    mix-blend-mode: multiply;
+    pointer-events: none;
 }
 
 .background-svg {
@@ -64,6 +69,9 @@ body {
 .section1 #fill2 .stop2 {
     stop-color: #3c215d;
 }
+
+
+/* ---------- Layout wrappers --------------------------------------------- */
 
 .content-wrapper {
     position: relative;
@@ -112,6 +120,9 @@ body {
     margin-bottom: 2px;
 }
 
+
+/* ---------- Buttons ------------------------------------------------------ */
+
 .center-container .btn {
     align-items: center;
     display: flex;
@@ -137,6 +148,9 @@ body {
     background-color: #3a9bdc;
 }
 
+
+/* ---------- Home section ------------------------------------------------- */
+
 #home-container img {
     padding-bottom: 40px;
 }
@@ -153,6 +167,9 @@ body {
     justify-content: space-around;
     gap: 5%;
 }
+
+
+/* ---------- Login & Register sections ----------------------------------- */
 
 #login-container img {
     padding-bottom: 20px;
@@ -196,6 +213,9 @@ body {
     flex-direction: column;
     gap: 10px; 
 }
+
+
+/* --- Register‑specific tweaks ------------------------------------------- */
 
 #register-container img {
     padding-bottom: 20px;
@@ -272,6 +292,9 @@ body {
     flex-direction: column;
     gap: 10px; 
 }
+
+
+/* ---------- Responsive tweaks ------------------------------------------- */
 
 @media (min-width: 768px) {
     #register-container .register-form p .helptext {

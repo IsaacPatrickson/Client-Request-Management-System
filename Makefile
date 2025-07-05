@@ -15,6 +15,11 @@ makemigrations:
 migrate:
 	docker-compose exec web python manage.py migrate
 
+exampledata:
+	docker-compose exec web python manage.py seed_users
+	docker-compose exec web python manage.py seed_client_data
+	docker-compose exec web python manage.py seed_generic_data
+
 test:
 	docker-compose exec web pytest
 

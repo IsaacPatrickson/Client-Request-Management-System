@@ -62,13 +62,9 @@ class CustomLoginView(LoginView):
         # After successful login, send all users to Django admin dashboard
         return reverse_lazy('custom_admin:index')
     
-    
+# Custom logout view
 class CustomLogoutView(LogoutView):
     next_page = '/'
-    
-    def dispatch(self, request, *args, **kwargs):
-        messages.success(request, "You have successfully logged out.")
-        return super().dispatch(request, *args, **kwargs)
     
     
 class AccountDisabledView(TemplateView):
