@@ -1,4 +1,4 @@
-#  **Client Request Tracker**
+#  **Client Request Management System**
 
 ### Django • Docker • PostgreSQL • Render • Agile • TDD
 
@@ -17,13 +17,13 @@ This project was created as part of an Agile, Sprint-based workflow and demonstr
 * Scrum practices, Jira sprint boards & Agile diaries
 
 📄 Full technical write-up (architecture, Agile analysis, sprint boards, TDD rationale) is located in:
-**`/docs/Client_Request_Tracker_WriteUp.docx`** 
+**`/docs/Client_Request_Management_System_WriteUp.docx`** 
 
 ---
 
 # 📌 **Project Overview**
 
-The Client Request Tracker is a lightweight web application built to solve a real problem: **client requests were being missed due to poor visibility and inconsistent tracking**.
+The Client Request Management System is a lightweight web application built to solve a real problem: **client requests were being missed due to poor visibility and inconsistent tracking**.
 
 This system provides:
 
@@ -78,13 +78,13 @@ This project was developed using **Scrum**, divided into epics and user stories,
 # 📂 **Project Structure**
 
 ```
-Client-Request-Tracker/
+Client-Request-Management-System/
 │
 ├── main/                  # Django app
 ├── tests/                 # pytest test suite
 ├── docker/                # Docker config files
 ├── docs/
-│    └── Client_Request_Tracker_WriteUp.docx
+│    └── Client_Request_Management_System_WriteUp.docx
 ├── manage.py
 ├── Dockerfile
 ├── docker-compose.yml
@@ -124,8 +124,8 @@ make <command>
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/IsaacPatrickson/Client-Request-Tracker.git
-cd Client-Request-Tracker
+git clone https://github.com/IsaacPatrickson/Client-Request-Management-System.git
+cd Client-Request-Management-System
 ```
 
 ### 2. Build the Docker environment
@@ -270,7 +270,7 @@ Screenshots are included in the write-up and original appendices inside `/docs`.
 
 Architecture, Agile methods, TDD, sprint boards, ERDs, appendices, user journeys and screenshots are documented in:
 
-👉 **`/docs/Client_Request_Tracker_WriteUp.docx`**
+👉 **`/docs/Client_Request_Management_System_WriteUp.docx`**
 
 
 ---
