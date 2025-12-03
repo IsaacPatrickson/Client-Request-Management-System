@@ -1,4 +1,4 @@
-# SEA-web-app
+# Software Engineering and Agile web application - Client Request Tracker
 
 A Django-based Client Request Management System (CRMS) with Docker development environment and production hosting on Render.
 
