@@ -29,7 +29,7 @@ This project was created as part of an Agile, Sprint-based workflow and demonstr
 
 ---
 
-# 📌 **Project Overview**
+## 📌 **Project Overview**
 
 The Client Request Management System is a lightweight web application built to solve a real problem: **client requests were being missed due to poor visibility and inconsistent tracking**.
 
@@ -48,7 +48,7 @@ This project was developed using **Scrum**, divided into epics and user stories,
 
 ---
 
-# ✨ **Key Features**
+## ✨ **Key Features**
 
 ### 🔐 Authentication & Permissions
 
@@ -83,7 +83,7 @@ This project was developed using **Scrum**, divided into epics and user stories,
 
 ---
 
-# 📂 **Project Structure**
+## 📂 **Project Structure**
 
 ```
 client-request-management-system/
@@ -101,7 +101,7 @@ client-request-management-system/
 
 ---
 
-# 🐳 **Docker & Makefile Workflow**
+## 🐳 **Docker & Makefile Workflow**
 
 This project includes a Makefile so you can manage Django + Docker without long commands:
 
@@ -127,7 +127,7 @@ make <command>
 
 ---
 
-# ⚙️ **Setup & Development**
+## ⚙️ **Setup & Development**
 
 ### 1. Clone the repository
 
@@ -183,7 +183,7 @@ make exampledata
 
 ---
 
-# 🧪 **Testing**
+## 🧪 **Testing**
 
 Run the full pytest suite:
 
@@ -216,7 +216,7 @@ All TDD details and screenshots are included in the write-up.
 
 ---
 
-# 🚀 Deployment (Render – Previously Hosted)
+## 🚀 Deployment (Render – Previously Hosted)
 
 This application was deployed to a live production environment using **Render**, running inside a Docker container with a managed **PostgreSQL** database.
 
@@ -240,7 +240,7 @@ This setup reflects a real-world Django deployment pipeline with containerisatio
 
 ---
 
-# 📘 **User Manual (Simplified)**
+## 📘 **User Manual (Simplified)**
 
 Screenshots are included in the write-up and original appendices inside `/docs`.
 
@@ -274,7 +274,7 @@ Screenshots are included in the write-up and original appendices inside `/docs`.
 
 ---
 
-# 📄 **Full Technical Write-Up**
+## 📄 **Full Technical Write-Up**
 
 Architecture, Agile methods, TDD, sprint boards, ERDs, appendices, user journeys and screenshots are documented in:
 
@@ -283,7 +283,7 @@ Architecture, Agile methods, TDD, sprint boards, ERDs, appendices, user journeys
 
 ---
 
-# 👤 **Author**
+## 👤 **Author**
 
 **Isaac Patrickson**
 Software Engineering & Agile – Final Project
