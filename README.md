@@ -86,7 +86,7 @@ This project was developed using **Scrum**, divided into epics and user stories,
 # 📂 **Project Structure**
 
 ```
-Client-Request-Management-System/
+client-request-management-system/
 │
 ├── main/                  # Django app
 ├── tests/                 # pytest test suite
@@ -132,8 +132,8 @@ make <command>
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/IsaacPatrickson/Client-Request-Management-System.git
-cd Client-Request-Management-System
+git clone https://github.com/IsaacPatrickson/client-request-management-system.git
+cd client-request-management-system
 ```
 
 ### 2. Build the Docker environment
